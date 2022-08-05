@@ -12,6 +12,11 @@ import { ThemeContextProvider } from './components/context/ThemeContext';
 import { Box } from './components/context/Box';
 import { UserContextProvider } from './components/context/UserContext';
 import { User } from './components/context/User';
+import { DomRef } from './components/ref/DomRef';
+import { MutableRef } from './components/ref/MutableRef';
+import { Counter } from './components/class/Counter';
+import { Private } from './components/auth/Private';
+import { Profile } from './components/auth/Profile';
 
 function App() {
   const personName = {
@@ -58,6 +63,10 @@ function App() {
       <UserContextProvider>
         <User />
       </UserContextProvider>
+      <DomRef />
+      <MutableRef />
+      <Counter message='The count value is' />
+      <Private isLoggedIn={true} component={Profile} />
     </div>
   );
 }

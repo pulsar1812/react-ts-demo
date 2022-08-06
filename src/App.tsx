@@ -17,6 +17,9 @@ import { MutableRef } from './components/ref/MutableRef';
 import { Counter } from './components/class/Counter';
 import { Private } from './components/auth/Private';
 import { Profile } from './components/auth/Profile';
+import { List } from './components/generics/List';
+import { RandomNumber } from './components/restriction/RandomNumber';
+import { Toast } from './components/template-literals/Toast';
 
 function App() {
   const personName = {
@@ -67,6 +70,20 @@ function App() {
       <MutableRef />
       <Counter message='The count value is' />
       <Private isLoggedIn={true} component={Profile} />
+      {/* <List
+        items={['Batman', 'Superman', 'Wonder Woman']}
+        onClick={(item) => console.log(item)}
+      /> */}
+      <List
+        items={[
+          { id: 1, first: 'Jon', last: 'Snow' },
+          { id: 2, first: 'Eric', last: 'Chan' },
+          { id: 3, first: 'Jane', last: 'Lee' },
+        ]}
+        onClick={(item) => console.log(item)}
+      />
+      <RandomNumber value={10} isPositive />
+      <Toast position='left-center' />
     </div>
   );
 }
